@@ -1,16 +1,25 @@
+/*
+ * @Author: zhengzhuang
+ * @Date: 2021-07-30 18:07:40
+ * @LastEditors: zhengzhuang
+ * @LastEditTime: 2021-07-31 15:16:18
+ * @Description: 登录页面 Login
+ * @FilePath: /gin-react-admin/web-react-admin/src/pages/Login/index.jsx
+ */
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import login from './index.module.css';
 import api from "../../api/api";
+import { message } from 'antd';
 
 function Login() {
   let history = useHistory()
 
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
     api.userLogin({mobile: values.username, password: values.password}).then(res => {
+      message.success("登录成功");
       sessionStorage.setItem('token', res)
       history.push('/index')
     })
@@ -62,7 +71,6 @@ function Login() {
               忘记密码
             </a> */}
           </Form.Item>
-
           <Form.Item>
             <Button type="primary" htmlType="submit" className="login-form-button">
               登录

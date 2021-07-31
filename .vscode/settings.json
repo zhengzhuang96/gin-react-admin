@@ -2,4 +2,5 @@
   "files.exclude": {
     "web-react-admin/node_modules": true
   }
+  
 }

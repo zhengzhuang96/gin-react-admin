@@ -2,7 +2,7 @@
  * @Author: zhengzhuang
  * @Date: 2021-07-30 18:07:40
  * @LastEditors: zhengzhuang
- * @LastEditTime: 2021-07-31 15:16:18
+ * @LastEditTime: 2021-08-07 15:23:38
  * @Description: 登录页面 Login
  * @FilePath: /gin-react-admin/web-react-admin/src/pages/Login/index.jsx
  */
@@ -20,7 +20,7 @@ function Login() {
   const onFinish = (values) => {
     api.userLogin({mobile: values.username, password: values.password}).then(res => {
       message.success("登录成功");
-      sessionStorage.setItem('token', res)
+      sessionStorage.setItem('token', res.data)
       history.push('/index')
     })
   };

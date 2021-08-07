@@ -42,6 +42,7 @@ export default class Server {
         },
       }
       axios.request(_option).then(res => {
+        console.log(res)
         if(res.data.code !== "0000") {
           console.log(res.data.msg)
           message.warning(res.data.msg);

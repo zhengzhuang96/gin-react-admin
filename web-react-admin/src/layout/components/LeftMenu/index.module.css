@@ -1,0 +1,16 @@
+.leftNav {
+  height: 100vh;
+}
+
+.lefthead {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.lefthead h3 {
+  color: #fff;
+  margin: 0;
+}

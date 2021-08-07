@@ -39,10 +39,6 @@ func (uc *UserController) userLogin(c *gin.Context) {
 		return
 	}
 
-	fmt.Println("获取的用户信息")
-	fmt.Println(json.Mobile)
-	fmt.Println(json.Password)
-
 	// 2:判断用户密码是否正确返回token
 	serverUser := server.UserServer{}
 	token, err := serverUser.DetectUsPs(json.Mobile, json.Password)

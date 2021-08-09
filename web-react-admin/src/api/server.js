@@ -2,7 +2,7 @@
  * @Author: zhengzhuang
  * @Date: 2021-07-31 09:44:24
  * @LastEditors: zhengzhuang
- * @LastEditTime: 2021-07-31 10:27:20
+ * @LastEditTime: 2021-08-09 11:44:09
  * @Description: In User Settings Edit
  * @FilePath: /gin-react-admin/web-react-admin/src/api/server.js
  */
@@ -42,14 +42,13 @@ export default class Server {
         },
       }
       axios.request(_option).then(res => {
-        console.log(res)
         if(res.data.code !== "0000") {
-          console.log(res.data.msg)
           message.warning(res.data.msg);
         } else {
           resolve(typeof res.data === 'object' ? res.data : JSON.parse(res.data))
         }
       }, error => {
+        message.error("error")
         if (error.response) {
           reject(error.response.data)
         } else {

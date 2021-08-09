@@ -1,19 +1,18 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Link } from "react-router-dom";
+import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined, MobileOutlined } from '@ant-design/icons';
 import login from './index.module.css';
 import api from "../../api/api";
 
 function Register() {
-  let history = useHistory()
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
     console.log(values.username, values.mobile, values.password)
     // sessionStorage.setItem('token', 123123)
     // history.push('/index')
-    api.userRegister({username: values.username, mobile: values.mobile, password: values.password}).then(res => {
+    api.userRegister({ username: values.username, mobile: values.mobile, password: values.password }).then(res => {
       console.log(res)
     })
   };

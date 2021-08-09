@@ -1,0 +1,15 @@
+.col {
+  margin-bottom: 10px;
+}
+
+
+.statisticsCard {
+  border: none;
+  color: #00000073;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.statisticsIcon {
+  cursor: pointer;
+}

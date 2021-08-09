@@ -15,6 +15,10 @@ const { Header, Footer, Sider, Content } = Layout;
 function Index() {
   const [collapsed, setCollapsed] = useState(false)
 
+  const setCollapsedFun = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <Layout className={styles.box}>
       <Sider collapsed={collapsed}></Sider>
@@ -23,9 +27,9 @@ function Index() {
       </Sider>
       <Layout className="site-layout">
         <Header className={styles.header}>
-          <HeadMenu setCollapsedFun={() => setCollapsed.bind(this, !collapsed)} collapsed={collapsed} />
+          <HeadMenu onClick={setCollapsedFun} collapsed={collapsed} />
         </Header>
-        <Content>
+        <Content className={styles.contentBox}>
           {/*内容区域*/}
           <Router>
             <Switch>

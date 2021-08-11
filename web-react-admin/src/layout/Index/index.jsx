@@ -20,9 +20,22 @@ function Index() {
   };
 
   return (
-    <Layout className={styles.box}>
-      <Sider collapsed={collapsed}></Sider>
-      <Sider collapsed={collapsed} className={styles.leftMenu}>
+    <Layout>
+      <Sider
+        breakpoint="sm"
+        collapsedWidth="100"
+        trigger={null}
+        collapsed={collapsed}></Sider>
+      <Sider
+        breakpoint="sm"
+        collapsedWidth="100"
+        trigger={null}
+        collapsed={collapsed}
+        onBreakpoint={broken => {
+          setCollapsed(broken);
+        }}
+        onCollapse={(collapsed, type) => { }}
+        className={styles.leftMenu}>
         <LeftMenu collapsedState={collapsed} />
       </Sider>
       <Layout className="site-layout">

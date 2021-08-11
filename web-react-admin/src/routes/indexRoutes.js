@@ -2,11 +2,12 @@
  * @Author: zhengzhuang
  * @Date: 2021-08-07 16:12:49
  * @LastEditors: zhengzhuang
- * @LastEditTime: 2021-08-09 13:33:00
+ * @LastEditTime: 2021-08-11 15:16:27
  * @Description: In User Settings Edit
- * @FilePath: /gin-react-admin/web-react-admin/src/routes/IndexRoutes.js
+ * @FilePath: /gin-react-admin/web-react-admin/src/routes/indexRoutes.js
  */
 import Index from "../pages/Index";
+import TestPage from "../pages/TestPage";
 
 const indexRoutes = [
   {
@@ -15,6 +16,14 @@ const indexRoutes = [
     meta: {
       title: "首页",
       name: "index"
+    },
+  },
+  {
+    path: "/testpage",
+    component: TestPage,
+    meta: {
+      title: "测试",
+      name: "TestPage"
     },
   },
 ]

@@ -3,19 +3,15 @@ import { Row, Col, Card, Statistic, Popover, Tabs, Button } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import * as echarts from 'echarts';
 import styles from './index.module.css';
-// var echarts = require('echarts');
 const { TabPane } = Tabs;
 
-// const cardIcon = <Popover placement="top" content="123"><ExclamationCircleOutlined className={styles.statisticsIcon} /></Popover>;
-
 const CardIcon = (props) => <Popover placement="top" content={props.content}><ExclamationCircleOutlined className={styles.statisticsIcon} /></Popover>;
-
 const operations = <Button>Extra Action</Button>;
+var myChart
 
-function Index(params) {
+function Index(props) {
 
   const trendRef = useRef(null);
-  var myChart
 
   useEffect(() => {
     myChart = echarts.init(trendRef.current);
@@ -44,7 +40,7 @@ function Index(params) {
     };
     myChart.setOption(option);
     setTimeout(() => {
-      myChart && myChart.resize();
+      myChart.resize();
     });
     // 这里是为了让echarts图表随着浏览器的可视区域变化自适应 参照图3，图4的区别（在不刷新页面的情况下）
     // window.addEventListener("resize", () => {
@@ -54,18 +50,11 @@ function Index(params) {
     // });
     // window.onresize = myChart.resize;
     window.onresize = myChart.resize;
-    resizeFun();
   }, [])
   
-  console.log('123123123')
-  // myChart && myChart.resize;
-
-  const resizeFun = () => {
-    console.log('2222')
-    myChart && myChart.resize();
-  }
-
-  resizeFun()
+  setTimeout(() => {
+    myChart.resize();
+  }, 500);
 
   return (
     <div>
